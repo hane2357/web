@@ -522,7 +522,13 @@
       padding: 0 1rem;
     }
     .video-col { flex: 2; }
-    .thumb-col { flex: 1; }
+    .thumb-col {
+  flex: 1;                /* 기존 flex 비율 유지 */
+  display: flex;          /* 플렉스 박스로 전환 */
+  flex-direction: column; /* 세로축으로 요소들을 쌓음 */
+  justify-content: center; /* 세로(위↕아래) 중앙 정렬 */
+  align-items: center;     /* 가로(왼↔오) 중앙 정렬 */
+}
 
     /* 동영상 래퍼 */
     .video-wrapper {
