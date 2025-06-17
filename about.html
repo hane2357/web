@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starbucks Youth Leadership Program – 설립 배경</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ──────────────────────────────────────────────
+         공통 스타일
+      ────────────────────────────────────────────── */
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Pretendard', sans-serif;
+        background-color: #f5f5f0;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* ──────────────────────────────────────────────
+         내비게이션 바
+      ────────────────────────────────────────────── */
+      .navbar {
+        background-color: #005740 !important;
+        border-bottom: 1px solid rgba(212, 233, 226, 0.6);
+      }
+      .navbar-brand img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+      }
+      .navbar-brand, .nav-link {
+        color: #ffffff !important;
+        font-weight: 500;
+      }
+      .nav-link:hover, .nav-link.active {
+        color: #d4e9e2 !important;
+      }
+      .dropdown-menu {
+        background-color: #ffffff;
+      }
+      .dropdown-item {
+        color: #005740;
+        font-weight: 500;
+      }
+      .dropdown-item:hover {
+        background-color: #e0f2e9;
+        color: #004f37;
+      }
+
+      /* ──────────────────────────────────────────────
+         헤더 배너 (설립 배경 섹션)
+         - 배경색을 어두운 스타벅스 그린(#004D3B)으로 변경
+         - 네비게이션과 분리되도록 margin-top 조정
+      ────────────────────────────────────────────── */
+      .header-banner {
+        background-color: #004D3B; /* 어두운 스타벅스 그린 */
+        color: #ffffff;
+        padding: 80px 0 60px 0; /* 상단 넉넉, 하단 조금 줄임 */
+        text-align: center;
+        margin-top: 56px; /* 고정 네비게이션 높이 만큼 띄움 */
+      }
+      .header-banner h1 {
+        font-size: 2.75rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .header-banner p {
+        font-size: 1.1rem;
+        margin: 0;
+      }
+
+      /* ──────────────────────────────────────────────
+         공통 섹션 제목
+      ────────────────────────────────────────────── */
+      section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      /* ──────────────────────────────────────────────
+         1) 초록우산 어린이재단 섹션
+         - 배경: 흰색
+         - 윗쪽 얇은 구분선
+         - 로고 옆 짧은 구분선 삽입 (문단 높이만큼)
+      ────────────────────────────────────────────── */
+      #childfund-section {
+        background-color: #ffffff;
+        border-top: 1px solid #e0e0e0;
+      }
+      #childfund-section .section-title {
+        color: #005740; /* 제목 색상(초록우산) */
+      }
+      #childfund-section .row {
+        align-items: center;
+      }
+      #childfund-section .logo {
+        max-width: 120px;
+        margin-right: 1.5rem;
+      }
+      /* 짧은 구분선: 문단 높이(약 80px) 만큼 */
+      #childfund-section .divider {
+        width: 4px;
+        height: 80px;
+        background-color: #e0e0e0;
+        margin: 0 auto 20px auto;
+      }
+      #childfund-section .content {
+        font-size: 1rem;
+        color: #3e3e3e;
+        line-height: 1.6;
+      }
+
+      /* ──────────────────────────────────────────────
+         2) 스타벅스 섹션
+         - 배경: 흰색
+         - 윗쪽 얇은 구분선
+         - 제목 색상: 초록(#005740)
+      ────────────────────────────────────────────── */
+      #starbucks-section {
+        background-color: #ffffff;
+        border-top: 1px solid #e0e0e0;
+      }
+      #starbucks-section .section-title {
+        color: #005740; /* 제목 색상 */
+      }
+      #starbucks-section .row {
+        align-items: center;
+      }
+      #starbucks-section .logo {
+        max-width: 120px;
+        margin-right: 1.5rem;
+        opacity: 0.95;
+      }
+      /* 짧은 구분선 */
+      #starbucks-section .divider {
+        width: 4px;
+        height: 80px;
+        background-color: #e0e0e0;
+        margin: 0 auto 20px auto;
+      }
+      #starbucks-section .content {
+        font-size: 1rem;
+        color: #3e3e3e;
+        line-height: 1.6;
+      }
+      /* 강조 텍스트 */
+      #starbucks-section .content strong {
+        color: #005740;
+      }
+      #starbucks-section .content span {
+        color: #005740;
+        font-weight: 600;
+      }
+      #starbucks-section .content em {
+        display: block;
+        margin-top: 0.5rem;
+        color: #333;
+        font-style: normal;
+      }
+/* 고정 서식 다운로드 버튼 */
+.fixed-download {
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+  background-color: #005740;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+.fixed-download:hover {
+  background-color: #004f37;
+}
+
+/* TOP 버튼 */
+.btn-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #005740;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+.btn-top:hover {
+  background-color: #004f37;
+}
+
+      /* ──────────────────────────────────────────────
+         3) 주요 연혁 섹션 (타임라인 디자인)
+         - 배경: 아주 연한 초록(#F0F9F5)
+         - 얇은 세로선, 왼쪽·오른쪽 교차 배치
+         - 원형 테두리는 제거하고 아이콘 바로 옆에 연도 텍스트 배치
+      ────────────────────────────────────────────── */
+      #timeline-section {
+        background-color: #F0F9F5;
+        border-top: 1px solid #e0e0e0;
+      }
+      #timeline-section .section-title {
+        color: #005740;
+        margin-bottom: 2rem;
+      }
+      .timeline {
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        max-width: 800px;
+      }
+      /* 중앙 세로라인 */
+      .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: #b2d8c6;
+      }
+      /* 각각의 아이템(왼쪽/오른쪽) */
+      .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 20px 20px 20px 40px;
+        box-sizing: border-box;
+      }
+      .timeline-item.left {
+        left: 0;
+        text-align: right;
+        padding-right: 60px;
+      }
+      .timeline-item.right {
+        left: 50%;
+        text-align: left;
+        padding-left: 60px;
+      }
+      /* 아이콘 + 연도 텍스트 */
+      .timeline-item .year-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+      }
+      .timeline-item .year-icon i {
+        font-size: 1.3rem;
+        color: #005740;
+      }
+      .timeline-item .year {
+        font-weight: bold;
+        font-size: 1.4rem; /* 살짝 키운 연도 텍스트 */
+        color: #005740;
+      }
+      .timeline-item .desc {
+        font-size: 0.95rem;
+        color: #3e3e3e;
+        line-height: 1.4;
+      }
+      @media (max-width: 767px) {
+        .timeline::before {
+          left: 8px;
+        }
+        .timeline-item {
+          width: 100%;
+          padding: 10px 20px 10px 40px;
+          text-align: left !important;
+        }
+        .timeline-item.left,
+        .timeline-item.right {
+          left: 0;
+          padding-left: 40px;
+        }
+      }
+    </style>
+
+
+
+
+  </head>
+
+  <body>
+    <!-- ──────────────────────────────────────────────
+       내비게이션 바 (다른 페이지와 통일)
+    ────────────────────────────────────────────── -->
+   <!-- 네비게이션 바 -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="main.html">
+        <img src="images/starbucks-logo.png" alt="Logo" />
+        Starbucks Youth Leadership Program
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="about.html">설립 배경</a></li>
+          <li class="nav-item"><a class="nav-link" href="activity.html">프로그램 활동</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">보도 자료</a></li>
+          <li class="nav-item"><a class="nav-link" href="apply.html">지원 안내</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!-- ──────────────────────────────────────────────
+       1) 헤더 배너 (설립 배경 섹션)
+    ────────────────────────────────────────────── -->
+    <div class="header-banner">
+      <h1>설립 배경</h1>
+      <p>Starbucks 청년인재 장학금의 시작과 흐름을 소개합니다.</p>
+    </div>
+
+    <!-- ──────────────────────────────────────────────
+       2) 초록우산 어린이재단 섹션
+    ────────────────────────────────────────────── -->
+    <section id="childfund-section">
+      <div class="container">
+        <div class="section-title">초록우산 어린이재단</div>
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center">
+            <!-- 로고 파일명: childfund-logo.png -->
+            <img
+              src="images/childfund-logo.png"
+              alt="초록우산 로고"
+              class="logo img-fluid"
+            />
+          </div>
+          <div class="col-md-1 d-none d-md-block">
+            <!-- 로고와 본문 사이 짧은 세로 구분선 -->
+            <div class="divider"></div>
+          </div>
+          <div class="col-md-8">
+            <div class="content">
+              <p>
+                초록우산 어린이재단(ChildFund Korea)은 1948년 전쟁고아 구호사업부터 시작된
+                국내 최초 아동복지 비영리기관입니다.<br />
+                1981년부터 전국 각지의 불우 아동 결연사업을 운영하였으며,  
+                1989년 한국아동학대예방협회를 창립하여 아동학대 예방사업을 선도했습니다.<br />
+                이후 아동 권리 보호 및 다양한 복지·교육·지원 활동을 통해  
+                어린이의 행복한 성장을 돕고 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────────────
+       3) 스타벅스 섹션
+    ────────────────────────────────────────────── -->
+    <section id="starbucks-section">
+      <div class="container">
+        <div class="section-title">스타벅스</div>
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center">
+            <!-- 로고 파일명: starbucks-logo2.png -->
+            <img
+              src="images/starbucks-logo2.png"
+              alt="Starbucks Logo"
+              class="logo img-fluid"
+            />
+          </div>
+          <div class="col-md-1 d-none d-md-block">
+            <!-- 짧은 세로 구분선 -->
+            <div class="divider"></div>
+          </div>
+          <div class="col-md-8">
+            <div class="content">
+              <p>
+                <strong>Starbucks</strong>는 1971년 설립된 글로벌 대표 커피 전문 브랜드입니다.<br />
+                전 세계 80여 개국에서 35,000여 개 매장을 운영하고 있으며,  
+                단순히 커피를 판매하는 매장 그 이상으로, 지역사회와 동반 성장하는  
+                <span>사회 공헌</span> 활동에 많은 노력을 기울이고 있습니다.
+              </p>
+              <p>
+                국내에서는 “커뮤니티 스토어” 매장을 통해 지역사회에 환원하는 모델을  
+                운영하고 있으며, 매장 판매품목당 일정 금액을 적립하여 초록우산 어린이재단에  
+                기부하고 있습니다.  
+              </p>
+              <p>
+                <em>이 기금은 청년인재 양성 장학금 프로그램의 재원으로 사용되며,  
+                이를 통해 많은 청년들이 리더십 함양과 학업 지원을 받을 수 있도록 돕고 있습니다.</em>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<body>
+  <!-- 설립 배경 & 사명 섹션 (여기에 복사해서 붙여넣으세요) -->
+  <style>
+    /* 섹션 배경 흰색 */
+    #mission-section {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+    /* 섹션 제목 */
+    #mission-section .section-title {
+      font-size: 2.0rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #005740;
+    }
+    /* 타임라인 그리드 */
+    .mission-timeline {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* 각 포인트 */
+    .mission-point {
+      flex: 1;
+      min-width: 260px;
+      text-align: center;
+    }
+    /* 말풍선 아이콘 */
+    .mission-point .bubble {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border: 2px solid #005740;
+      border-radius: 40px 40px 0 40px;
+      font-size: 2rem;
+      color: #005740;
+      margin: 0 auto 0.75rem;
+    }
+    /* 포인트 제목 */
+    .mission-point .point-title {
+      margin-top: 1rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #004f37;
+    }
+    /* 본문 텍스트 */
+    .mission-point .point-text {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #3e3e3e;
+    }
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .mission-timeline { flex-direction: column; gap: 3rem; }
+      .mission-point .bubble { width: 60px; height: 60px; font-size: 1.5rem; }
+      #mission-section .section-title { font-size: 2rem; }
+    }
+
+/* 모든 section 위에 구분선 추가 */
+section {
+  padding: 60px 0;               /* 기존 여백 */
+  border-top: 1px solid #e0e0e0; /* 위쪽에 1px 회색 선 */
+}
+
+
+
+  </style>
+
+  <section id="mission-section">
+    <div class="container">
+      <h2 class="section-title">설립 배경 &amp; 사명</h2>
+      <div class="mission-timeline">
+        <!-- 초록우산 어린이재단 -->
+        <div class="mission-point">
+          <div class="bubble">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h3 class="point-title">초록우산 어린이재단</h3>
+          <p class="point-text">
+            우리는 모든 아동의 권리와 가치를 존중하며 <br>
+            아동이 안전하고 건강하게 행복한 삶을 영위할 수 있는 세상을 만들기 위해 노력합니다.
+            
+          </p>
+        </div>
+        <!-- Starbucks -->
+        <div class="mission-point">
+          <div class="bubble">
+            <i class="bi bi-cup-hot-fill"></i>
+          </div>
+          <h3 class="point-title">Starbucks</h3>
+          <p class="point-text">
+            모두의 커피, 함께하는 이야기, <br>
+            모든 커뮤니티와 더불어 사람과 사람을 연결하는 <br>무한한 가능성을 만들어갑니다.
+          </p>
+        </div>
+        <!-- 청년인재 장학 프로그램 -->
+        <div class="mission-point">
+          <div class="bubble">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <h3 class="point-title">청년인재 양성 프로그램</h3>
+          <p class="point-text">
+            청년의 가능성을 응원하며<br>
+            미래의 리더를 길러냅니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+    <!-- ──────────────────────────────────────────────
+       4) 주요 연혁 섹션 (타임라인 디자인)
+    ────────────────────────────────────────────── -->
+    <section id="timeline-section">
+      <div class="container">
+        <div class="section-title">주요 연혁</div>
+        <ul class="timeline">
+          <li class="timeline-item left">
+            <div class="year-icon">
+              <i class="bi bi-shop-window"></i>
+              <span class="year">2014년 10월</span>
+            </div>
+            <div class="desc">
+              대학로점 커뮤니티 스토어 오픈 및 첫 장학금 적립 시작
+            </div>
+          </li>
+          <li class="timeline-item right">
+            <div class="year-icon">
+              <i class="bi bi-people"></i>
+              <span class="year">2016년</span>
+            </div>
+            <div class="desc">
+              2기 장학생 5명 선발
+            </div>
+          </li>
+          <li class="timeline-item left">
+            <div class="year-icon">
+              <i class="bi bi-award"></i>
+              <span class="year">2018년</span>
+            </div>
+            <div class="desc">
+              4기 장학생 10명 선발
+            </div>
+          </li>
+          <li class="timeline-item right">
+            <div class="year-icon">
+              <i class="bi bi-mortarboard"></i>
+              <span class="year">2019년</span>
+            </div>
+            <div class="desc">
+              5기 장학생 12명 선발 &amp; 1기 졸업생 배출
+            </div>
+          </li>
+          <li class="timeline-item left">
+            <div class="year-icon">
+              <i class="bi bi-calendar-event"></i>
+              <span class="year">2021년</span>
+            </div>
+            <div class="desc">
+              7기 장학생 10명 선발 &amp; 3기 졸업생 배출
+            </div>
+          </li>
+          <li class="timeline-item right">
+            <div class="year-icon">
+              <i class="bi bi-building"></i>
+              <span class="year">2023년 4월</span>
+            </div>
+            <div class="desc">
+              성수역점 커뮤니티 스토어 2호점 오픈 및 적립 시작
+            </div>
+          </li>
+          <li class="timeline-item left">
+            <div class="year-icon">
+              <i class="bi bi-trophy"></i>
+              <span class="year">2025년 예정</span>
+            </div>
+            <div class="desc">
+              11기 장학생 10명 선발 &amp; 7기 졸업생 배출 예정
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- 10) Footer -->
+  
+     <footer>
+<div class="bg-light py-2">
+      <div class="container text-center">
+        <span class="me-2">후원문의 · 상담</span>
+        <a href="tel:15881940" class="fw-bold text-decoration-none" style="color:#005740;">
+          1588-1940
+        </a>
+        <span class="ms-2">(평일 09:00 ~ 18:00 / 주말 및 공휴일 휴무)</span>
+      </div>
+    </div>
+
+
+    <div class="py-3">
+      <div class="container text-center">
+        <a href="https://www.youtube.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com/childfundkorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://blog.childfund.or.kr" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-journal-text"></i>
+        </a>
+      </div>
+    </div>
+    <div class="border-top pt-3 pb-5">
+      <div class="container text-center text-muted small">
+        <img
+          src="images/starbucks-logo.png"
+          alt="Starbucks Youth Leadership Program Logo"
+          style="height: 24px; margin-bottom: 0.5rem;"
+          class="d-inline-block"
+        />
+        <div>사회복지법인 어린이재단 | 사업자등록번호 202-82-55238</div>
+        <div>대표이사 양옥경</div>
+        <div>(04522) 서울시 중구 무교로 20 어린이재단빌딩</div>
+        <div>대표전화 1588-1940 | 팩스 02-756-4256</div>
+        <div>Copyright © ChildFund Korea. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 고정 서식 다운로드 버튼 -->
+  <button
+    class="fixed-download"
+    onclick="window.location.href='스타벅스 청년인재 양성 프로그램 모집안내문.pdf'"
+    title="서식 다운로드"
+  >
+    <i class="bi bi-download"></i>
+  </button>
+
+  <!-- TOP 버튼 -->
+  <button
+    class="btn-top"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    title="맨 위로"
+  >
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>

@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="ko">
+<head>
+
+  <body id="top">
+  <!-- … -->
+
+  …
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <!-- Your custom styles -->
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+
+<body>
+  <!-- 1) 네비게이션 바 -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="main.html">
+        <img src="images/starbucks-logo.png" alt="Logo" />
+        Starbucks Youth Leadership Program
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="about.html">설립 배경</a></li>
+          <li class="nav-item"><a class="nav-link" href="activity.html">프로그램 활동</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">보도 자료</a></li>
+          <li class="nav-item"><a class="nav-link" href="apply.html">지원 안내 </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2) 캐러셀 -->
+  <div
+    id="mainCarousel"
+    class="carousel slide carousel-fade"
+    data-bs-ride="carousel"
+    data-bs-interval="3000"
+  
+  >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div
+        class="carousel-item active"
+        style="background-image: url('images/slide1.jpg');"
+      ></div>
+      <div
+        class="carousel-item"
+        style="background-image: url('images/slide2.jpg');"
+      ></div>
+      <div
+        class="carousel-item"
+        style="background-image: url('images/slide3.jpg');"
+      ></div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- 3) 메인 텍스트 -->
+  <div class="main-title">
+    <p>Starbucks Youth Leadership Program</p>
+    <h1>스타벅스 청년인재 장학금</h1>
+    <p>우리는 작은 원두의 가능성을 믿습니다.</p>
+  </div>
+
+
+<!-- 청년인재 양성 프로그램 섹션 -->
+<section id="programs-section">
+  <div class="container">
+    <!-- 헤더 -->
+    <div class="programs-header">
+      <span class="programs-label">Programs</span>
+      <span class="programs-progress"></span>
+      <h2 class="programs-title">
+        스타벅스 청년인재<br/>
+        프로그램을 소개합니다.
+      </h2>
+    </div>
+
+   <!-- 프로그램 카드 래퍼 -->
+<div class="programs-cards">
+  <!-- 1. 장학금 지원 -->
+  <div class="program-card">
+    <div class="icon"><i class="bi-award-fill"></i></div>
+    <h3>장학금 지원</h3>
+    <p>
+      경제적 사유로 꿈을 포기하지 않도록<br/>
+      매년 장학금을 지급합니다.
+    </p>
+  </div>
+
+  <!-- 2. 리더십 캠프 & 세미나 -->
+  <div class="program-card">
+    <div class="icon"><i class="bi bi-mortarboard-fill"></i></div>
+    <h3>리더십 캠프 & 세미나</h3>
+    <p>
+      연중 진행되는 유스 리더십 캠프와<br/>
+      역량 강화 세미나에 참여할 수 있습니다.
+    </p>
+  </div>
+
+  <!-- 3. 멘토링 & 봉사활동 -->
+  <div class="program-card">
+    <div class="icon"><i class="bi bi-globe2"></i></div>
+    <h3>글로벌 경험 & 인턴십</h3>
+    <p>
+        우수 활동자에게 해외 글로벌<br/>
+    체험 기회 및 인턴십을 제공합니다.
+    </p>
+  </div>
+</div>
+
+</section>
+
+<style>
+  /* 섹션 전체 */
+  #programs-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  /* h2.programs-title 의 첫 번째 줄(“스타벅스 청년인재”)만 초록색으로 */
+.programs-title::first-line {
+  color: #005740;
+}
+
+  /* 워터마크 텍스트 */
+  #programs-section::before {
+    content: "YOUTH LEADERSHIP";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    color: #6ed355;
+    opacity: 0.03;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .programs-header {
+    position: relative;
+    text-align: left;
+    margin-bottom: 60px;
+    z-index: 1;
+  }
+  .programs-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #005f1d; /* 진한 파랑 */
+    border-bottom: 2px solid #005512;
+    padding-bottom: 4px;
+  }
+  .programs-progress {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00612c;
+    float: right;
+  }
+  .programs-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 16px;
+    color: #111827;
+  }
+
+  .programs-cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    z-index: 1;
+  }
+  .program-card {
+    background: #fff;
+    flex: 1 1 calc(33.333% - 16px);
+    min-width: 260px;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  .program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+  .program-card .icon {
+    font-size: 2.5rem;
+    color: #005740;
+    margin-bottom: 16px;
+  }
+  .program-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111827;
+  }
+  .program-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4B5563;
+  }
+
+  /* 반응형 */
+  @media (max-width: 992px) {
+    .programs-cards { justify-content: center; }
+    .program-card { flex: 1 1 calc(50% - 16px); }
+  }
+  @media (max-width: 576px) {
+    .programs-title { font-size: 2rem; }
+    .program-card { flex: 1 1 100%; }
+  }
+</style>
+
+<!-- Bootstrap Icons 불러오기 (이미 페이지에 포함되어 있지 않다면) -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+
+<style>
+  /* Testimonials Section */
+  #testimonials {
+    background-color: #e8f5ee;
+    padding: 100px 0;
+  }
+  #testimonials .custom-quote {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  #testimonials .custom-quote h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+  }
+  #testimonials .custom-quote .highlight {
+    color: #005740;
+  }
+  #testimonials .cards {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #testimonials .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 360px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #testimonials .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  #testimonials .card p {
+    font-style: italic;
+    color: #333333;
+    flex-grow: 1;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  #testimonials .author {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+  #testimonials .author i {
+    font-size: 48px;
+    color: #005740;
+    margin-right: 16px;
+  }
+  #testimonials .author .info {
+    font-size: 0.95rem;
+    color: #111827;
+  }
+  #testimonials .author .info strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  #testimonials .author .info small {
+    color: #666666;
+  }
+</style>
+<!-- Quote Section -->
+<style>
+  .custom-quote {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 1rem;
+    text-align: center;
+    font-family: 'Pretendard', sans-serif;
+  }
+  .custom-quote p {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #111; 
+    margin: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .custom-quote p .highlight {
+    color: #005740;
+    font-weight: 700;
+  }
+  /* 큰 따옴표 */
+  .custom-quote::before,
+  .custom-quote::after {
+    font-size: 10rem;
+    color: rgba(0,0,0,0.15);
+    position: absolute;
+    z-index: 1;
+    font-family: serif;
+  }
+  .custom-quote::before {
+    content: "“";
+    top: -0.5rem;
+    left: -0.1rem;
+  }
+  .custom-quote::after {
+    content: "”";
+    bottom: -0.5rem;
+    right: -0.5rem;
+  }
+  @media (max-width: 576px) {
+    .custom-quote p { font-size: 1.25rem; }
+    .custom-quote::before,
+    .custom-quote::after { font-size: 3rem; }
+  }
+</style>
+
+<style>
+  .custom-quote h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10rem; /* 위 섹션과 거리 조절 */
+  }
+  .custom-quote .highlight {
+    color: #005740;  /* 스타벅스 그린 */
+  }
+</style>
+
+
+
+<style>
+  .custom-quote h1 {
+    font-weight: 700;  /* 또는 bold */
+  }
+</style>
+
+<!-- HEAD 에 넣을 스타일 -->
+<style>
+  /* Testimonials Section */
+  #testimonials {
+    background-color: #e8f5ee;
+    padding: 100px 0;
+  }
+  #testimonials .custom-quote {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  #testimonials .custom-quote h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+  }
+  #testimonials .custom-quote .highlight {
+    color: #005740;
+  }
+  #testimonials .cards {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #testimonials .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 360px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #testimonials .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  #testimonials .card p {
+    font-style: italic;
+    color: #333333;
+    flex-grow: 1;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  #testimonials .author {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+  #testimonials .author i {
+    font-size: 48px;
+    color: #005740;
+    margin-right: 16px;
+  }
+  #testimonials .author .info {
+    font-size: 0.95rem;
+    color: #111827;
+  }
+  #testimonials .author .info strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  #testimonials .author .info small {
+    color: #666666;
+  }
+</style>
+
+<!-- BODY 안에 넣을 Testimonials 섹션 -->
+<section id="testimonials">
+  <div class="container">
+    <!-- 메인 인용구 -->
+    <div class="custom-quote">
+      <h2>우리는 작은 원두의 <span class="highlight">가능성</span>을 믿습니다.</h2>
+    </div>
+    <!-- 카드 그룹 -->
+    <div class="cards">
+      <!-- 카드 1 -->
+      <div class="card">
+        <p>"이 장학금을 통해 경제적 부담을 크게 덜고, 멘토링 덕분에 진로 방향을 잡을 수 있었습니다."</p>
+        <div class="author">
+          <i class="bi bi-person-circle"></i>
+          <div class="info">
+            <strong>이예진 (3기 장학생)</strong>
+            <small>컴퓨터공학과, 2021년 졸업</small>
+          </div>
+        </div>
+      </div>
+      <!-- 카드 2 -->
+      <div class="card">
+        <p>"봉사활동과 리더십 캠프 덕분에 팀워크 능력이 늘었고, 글로벌 인턴십 덕에 새로운 경험을 쌓았어요."</p>
+        <div class="author">
+          <i class="bi bi-person-circle"></i>
+          <div class="info">
+            <strong>김민수 (5기 장학생)</strong>
+            <small>경영학과 재학 중</small>
+          </div>
+        </div>
+      </div>
+      <!-- 더 추가하실 카드가 있으면 이 아래에 복제해서 넣으세요 -->
+    </div>
+  </div>
+</section>
+
+
+<!-- 7) 홍보동영상 & 활동 사진 섹션 -->
+  <style>
+    /* 배경색 */
+    .activity-section {
+      background-color: #f7f5f0;
+      padding: 80px 0;
+    }
+    .activity-section .section-title {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #005740;
+      margin-bottom: 2rem;
+    }
+
+    /* 2:1 레이아웃 */
+    .activity-content {
+      display: flex;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .video-col { flex: 2; }
+    .thumb-col { flex: 1; }
+
+    /* 동영상 래퍼 */
+    .video-wrapper {
+      border-radius: .75rem;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    /* 2×2 사진 그리드 */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-auto-rows: 1fr;
+      gap: 1rem;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: .5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 1/1;
+    }
+
+    /* 스크롤 애니메이션 초기 상태 */
+    .animate-left, .animate-right {
+      opacity: 0;
+      transform: translateX( (0) );
+      transition: opacity .6s ease-out, transform .6s ease-out;
+    }
+    .animate-left { transform: translateX(-50px); }
+    .animate-right { transform: translateX(50px); }
+    .animate-left.visible,
+    .animate-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* 반응형: 992px 이하에서 세로 스택 */
+    @media(max-width:992px) {
+      .activity-content { flex-direction: column; }
+    }
+  </style>
+
+  <section class="activity-section">
+    <div class="container">
+      <h2 class="section-title">홍보동영상 &amp; 활동 사진</h2>
+      <div class="activity-content">
+        <!-- 왼쪽: 동영상 -->
+        <div class="video-col animate-left">
+          <div class="video-wrapper ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/Mh4kFmMqyKg"
+              title="활동 홍보 영상"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <!-- 오른쪽: 사진 2×2 -->
+        <div class="thumb-col animate-right">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="images/Program Activities_2.jpg" alt="활동 사진 1">
+            </div>
+            <div class="gallery-item">
+              <img src="images/Program Activities_3.jpg" alt="활동 사진 2">
+            </div>
+            <div class="gallery-item">
+              <img src="images/Global Internship.jpg" alt="활동 사진 3">
+            </div>
+            <div class="gallery-item">
+              <img src="images/Club Activity.jpg" alt="활동 사진 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 스크립트: 스크롤 애니메이션 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+        io.observe(el);
+      });
+    });
+  </script>
+
+
+
+  <!-- 8) 커뮤니티 스토어 섹션 -->
+  <section class="community-section">
+    <div class="container">
+      <div class="section-title" style="color: #fff;">Community Store</div>
+      <div class="row gy-4 align-items-center">
+        <div class="col-md-6">
+          <div class="video-wrapper ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/FAV-bwxLdxo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p class="community-text">
+            스타벅스 커뮤니티 스토어는 지역사회의 긍정적 변화와 장기적 발전에 기여하기 위해
+            매장 수익금 일부를 환원하는 스타벅스의 글로벌 사회공헌 모델입니다. 한국 스타벅스는
+            여러 지역에 커뮤니티 스토어를 운영하며, 해당 매장에서 판매되는 모든 품목당 300원을
+            적립하여 초록우산 어린이재단에 기부합니다. 이 기금은 청년인재 양성 프로그램의
+            장학금 및 리더십 육성 활동에 사용됩니다.
+          </p>
+        </div>
+      </div>
+      <div class="row stats-row mt-5">
+        <div class="col-md-6 mb-4">
+          <div class="stat-card card">
+            <h3>지원 대학생</h3>
+            <p>101명</p>
+            <small>*2025년 3월 기준 누적</small>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="stat-card card">
+            <h3>지원 금액</h3>
+            <p>28억 원</p>
+            <small>*커뮤니티 스토어 적립금 및 글로벌 기금 포함</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9) CTA 섹션 -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title" style="color: #005740;">
+        우리는 작은 원두의 가능성을 믿습니다.
+      </h2>
+      <div class="row cta-cards gy-4">
+        <div class="col-md-3">
+          <div
+            class="card p-4 h-100 text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modalSupport"
+          >
+            <i class="bi bi-box-seam cta-icon"></i>
+            <div class="cta-title mt-2">지원 내용</div>
+            <div class="cta-desc mt-1">
+              장학금 지원 대상과 금액, 혜택을 안내합니다.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card p-4 h-100 text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modalSelection"
+          >
+            <i class="bi bi-award cta-icon"></i>
+            <div class="cta-title mt-2">선발 내용</div>
+            <div class="cta-desc mt-1">
+              선발 기준과 절차, 배출 현황을 확인하세요.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card p-4 h-100 text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modalTimeline"
+          >
+            <i class="bi bi-calendar-check cta-icon"></i>
+            <div class="cta-title mt-2">선발 일정</div>
+            <div class="cta-desc mt-1">
+              지원 접수부터 최종 발표까지 주요 일정을 안내합니다.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="card p-4 h-100 text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modalApply"
+          >
+            <i class="bi bi-pencil-square cta-icon"></i>
+            <div class="cta-title mt-2">지원 방법</div>
+            <div class="cta-desc mt-1">
+              온라인 접수 절차와 제출 서류 안내를 제공합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="apply.html" class="btn btn-success btn-lg px-5">지원하기</a>
+      </div>
+      <div class="text-center mt-3">
+        <div class="cta-contact">
+          문의&nbsp;&nbsp;<span>초록우산 스타벅스 청년인재 양성 프로그램 담당자 02-799-0458</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10) Footer -->
+  
+    
+<div class="bg-light py-2">
+      <div class="container text-center">
+        <span class="me-2">후원문의 · 상담</span>
+        <a href="tel:15881940" class="fw-bold text-decoration-none" style="color:#005740;">
+          1588-1940
+        </a>
+        <span class="ms-2">(평일 09:00 ~ 18:00 / 주말 및 공휴일 휴무)</span>
+      </div>
+    </div>
+
+
+    <div class="py-3">
+      <div class="container text-center">
+        <a href="https://www.youtube.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/ChildFundKorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com/childfundkorea" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://blog.childfund.or.kr" target="_blank" class="text-dark fs-4 mx-2 text-decoration-none">
+          <i class="bi bi-journal-text"></i>
+        </a>
+      </div>
+    </div>
+    <div class="border-top pt-3 pb-5">
+      <div class="container text-center text-muted small">
+        <img
+          src="images/starbucks-logo.png"
+          alt="Starbucks Youth Leadership Program Logo"
+          style="height: 24px; margin-bottom: 0.5rem;"
+          class="d-inline-block"
+        />
+        <div>사회복지법인 어린이재단 | 사업자등록번호 202-82-55238</div>
+        <div>대표이사 양옥경</div>
+        <div>(04522) 서울시 중구 무교로 20 어린이재단빌딩</div>
+        <div>대표전화 1588-1940 | 팩스 02-756-4256</div>
+        <div>Copyright © ChildFund Korea. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 고정 서식 다운로드 버튼 -->
+  <button
+    class="fixed-download"
+    onclick="window.location.href='스타벅스 청년인재 양성 프로그램 모집안내문.pdf'"
+    title="서식 다운로드"
+  >
+    <i class="bi bi-download"></i>
+  </button>
+
+  <!-- TOP 버튼 -->
+  <button
+    class="btn-top"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    title="맨 위로"
+  >
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Modals for CTA buttons -->
+  <!-- 모달 1: 지원 내용 -->
+  <div
+    class="modal fade"
+    id="modalSupport"
+    tabindex="-1"
+    aria-labelledby="modalSupportLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSupportLabel">지원내용 및 선발자 특전</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>
+              <strong>장학금 지급 연간 600만원</strong><br />
+              <small>
+                *학기당 300만원 (1학년 2학기부터 최대 7학기 동안),
+                매 학기 적격 여부 심사, 국가장학금 및 교내장학금과 중복 수혜 가능.
+                타기업 장학금 중복 수혜는 스타벅스 및 초록우산 심사 거쳐 승인
+              </small>
+            </li>
+            <li>
+              <strong>청년인재 양성 프로그램 진행</strong> 유스 리더십 캠프, 멘토링,
+              봉사활동, 세미나 등
+            </li>
+            <li>
+              <strong>연 1회 우수 활동자 혜택</strong> 글로벌 체험 기회 제공 및
+              스타벅스 지원센터 인턴십
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 2: 선발 내용 -->
+  <div
+    class="modal fade"
+    id="modalSelection"
+    tabindex="-1"
+    aria-labelledby="modalSelectionLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSelectionLabel">선발 내용</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><strong>선발 기준</strong>: 학업 성적, 잠재력, 봉사활동 경력 등 종합 평가</li>
+            <li><strong>선발 절차</strong>: 서류 심사 → 면접 심사 → 최종 합격자 발표</li>
+            <li><strong>배출 현황</strong>: 총 101명 선발, 졸업생 50명 배출 (25년 2월 기준)</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 3: 선발 일정 -->
+  <div
+    class="modal fade"
+    id="modalTimeline"
+    tabindex="-1"
+    aria-labelledby="modalTimelineLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTimelineLabel">선발 일정</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>지원서 접수</strong>: 2025년 4월 1일 ~ 4월 30일</p>
+          <p><strong>1차 서류 심사 결과 발표</strong>: 2025년 5월 15일</p>
+          <p><strong>2차 면접 심사</strong>: 2025년 5월 25일 ~ 5월 27일</p>
+          <p><strong>최종 합격자 발표</strong>: 2025년 6월 5일</p>
+          <p><strong>오리엔테이션 캠프</strong>: 2025년 6월 20일</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 4: 지원 방법 -->
+  <div
+    class="modal fade"
+    id="modalApply"
+    tabindex="-1"
+    aria-labelledby="modalApplyLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalApplyLabel">지원 방법</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>온라인 접수</strong>: 홈페이지 상단 ‘지원하기’ 메뉴 클릭 → 지원서 작성 및 제출</p>
+          <p><strong>제출 서류</strong>: 재학증명서, 성적증명서, 자기소개서, 추천서(선택)</p>
+          <p><strong>이메일 접수 시</strong>: attach@starbucks-youth.org 로 파일 첨부 후 발송</p>
+          <p><strong>우편 접수 시</strong>: 서울시 중구 무교로 20, 어린이재단 빌딩 3층 청년인재 담당자 앞</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
+
+</body>
+</html>
