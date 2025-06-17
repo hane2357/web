@@ -499,11 +499,12 @@
 
 <!-- 7) 홍보동영상 & 활동 사진 섹션 -->
 <style>
-  /* 배경색 */
+  /* 배경색 및 패딩 */
   .activity-section {
     background-color: #f7f5f0;
     padding: 80px 0;
   }
+
   .activity-section .section-title {
     text-align: center;
     font-size: 2.25rem;
@@ -512,29 +513,27 @@
     margin-bottom: 2rem;
   }
 
-  /* 2:1 레이아웃 (부모 컨테이너에 align-items!) */
+  /* 2:1 레이아웃 컨테이너 */
   .activity-content {
     display: flex;
-    align-items: center;  /* ★ Flex 아이템( video-col / thumb-col )을 세로 중앙에 맞춤 */
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
-  .video-col {
-    flex: 2;
-  }
+
+  /* 비디오 컬럼과 썸네일 컬럼 모두 플렉스 중앙정렬 */
+  .video-col,
   .thumb-col {
-    flex: 1;
-    display: flex;          /* ★ thumb-col 내부도 flex */
-    flex-direction: column; /* 세로 축으로 쌓기 */
-    justify-content: center; /* 세로(위⇄아래) 중앙 정렬 */
-    align-items: center;     /* 가로(왼⇄오) 중앙 정렬 */
+    display: flex;
+    align-items: center;    /* 세로 중앙정렬 */
+    justify-content: center; /* 가로 중앙정렬 */
   }
 
-  /* 동영상 래퍼 */
+  /* 비디오 래퍼 (비율 유지) */
   .video-wrapper {
-    border-radius: .75rem;
+    width: 100%;
+    border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   }
@@ -542,29 +541,30 @@
   /* 2×2 사진 그리드 */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     width: 100%;
+    max-width: 300px; /* 필요에 따라 조정 */
   }
+
   .gallery-item {
-    position: relative;
+    border-radius: 0.5rem;
     overflow: hidden;
-    border-radius: .5rem;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
+
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    aspect-ratio: 1 / 1;
     display: block;
-    aspect-ratio: 1/1;
   }
 
   /* 스크롤 애니메이션 초기 상태 */
   .animate-left, .animate-right {
     opacity: 0;
-    transition: opacity .6s ease-out, transform .6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   .animate-left { transform: translateX(-50px); }
   .animate-right { transform: translateX(50px); }
@@ -576,13 +576,7 @@
 
   /* 반응형: 992px 이하에서 세로 스택 */
   @media (max-width: 992px) {
-    .activity-content {
-      flex-direction: column;
-      align-items: stretch; /* 세로 스택일 땐 stretch */
-    }
-    .thumb-col {
-      margin-top: 1.5rem;
-    }
+    .activity-content { flex-direction: column; }
   }
 </style>
 
@@ -623,14 +617,13 @@
   </div>
 </section>
 
-<!-- 스크립트: 스크롤 애니메이션 -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const io = new IntersectionObserver((entries, observer) => {
+    const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
@@ -640,8 +633,6 @@
     });
   });
 </script>
-
-
 
 
   <!-- 8) 커뮤니티 스토어 섹션 -->
